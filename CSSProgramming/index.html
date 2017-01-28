@@ -1,0 +1,394 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Coding style CSS</title>
+	<link rel="stylesheet" href="css/style.css">	
+</head>
+<body>
+
+<header>
+	<p>Данная таблица стилей создавалась мной собственноручно, чтобы иметь возможность, при необходимости, выделить соответствующим образом в тексте HTML-документа, в котором описывается программа на языке программирования, имена классов и интерфейсов, полей классов,  имена существующих объектов в программе, методов и т.д.</p>
+	
+	<p>Кроме того, таблица стилей позволяет выделять особым образом блоки кода, делая отступы, выравнивание, а также синтакситечкую подсветку кода (ключевые слова, статические методы, и т.д).</p>
+	
+	Скачать таблицу стилей можно <a href="css/style.css">отсюда</a>
+	
+</header>
+<hr>
+
+<main>
+ <h2>CSS Coding Style API</h2>
+ 
+	<ul>
+		<li>Имена <span class="code">переменных</span>, <span class="code">классов</span>, интерфейсов, и т.п. описываемые в тексте <a href="#varsAndClassesNames">>>></a></li>
+		<li><a href="#blockOfCode">Блоки с кодом</a>
+			<ul>
+				<li><a href="#annotation">Аннотации</a></li>
+				<li><a href="#keywords">Ключевые слова в программе</a></li>
+				<li><a href="#classmarkup">Разметка класса в блоке кода</a>
+					<ul>
+						<li><a href="#className">Имя класса</a></li>
+						<li><a href="#classBody">Тело класса</a></li>
+					</ul>
+				</li>				
+				<li><a href="#methodMarkup">Разметка метода в блоке кода</a>
+					<ul>
+						<li><a href="#methodName">Имя метода</a></li>
+						<li><a href="#methodBody">Тело метода</a></li>
+					</ul>
+				</li>
+				<li><a href="#finalvars"><span class="code">final</span> переменные (константы)</a></li>
+				<li><a href="#staticMethods">Статические методы</a></li>
+				<li><a href="#strings">Строки</a>
+					<ul>
+					<li><a href="#stringsNewLine">Перенос на новую строку</a></li>
+					</ul>
+				</li>
+				<li><a href="#comments">Комментарии</a></li>
+				<li><a href="#forBody">Тело цикла</a></li>
+				<li><a href="#ifBody">Тело <span class="code">if</span></a></li>
+				<li><a href="#tryCatch">Тело <span class="code">try-catch-finally</span></a></li>
+				
+			</ul>
+		</li>
+	</ul>
+  
+ <hr>
+	<section>
+		<h3 id=varsAndClassesNames>Имена переменных, классов, интерфейсов, описываемые в тексте</h3>
+	 
+		<p>Ключевые элементы программы, - имена описываемых объектов, имена имена классов, интерфейсов, методов и т.п. в тексте HTML документа выделяются с помощью HTML тега <span class="code">&lt;span&gt;</span> c классом <span class="code">code</span>. Например:</p>
+		
+			<p class=code>
+				&lt;span class=code&gt;имя переменной&lt;/span&gt;
+			</p>
+
+		<p>Такой элемент в документе будет выделен с помощью таблицы стиля и будет отображатся как текст с использованием шрифта <span class="code">Consolas</span> (или Monospace если такой шрифт не будет найден в системе ), размером  <span class="code">13  пунктов</span>, <span class="code">синего цвета</span>.</p>	
+	</section>
+		
+<hr>	
+	<section>
+		<h3 id="blockOfCode">Блоки с кодом</h3>
+			
+		<p>Блоки кода размечаются  следующим образом:</p>
+	
+		<p>Весь блок с кодом выделяется с помощью тега <span class="code">&lt;div&gt;</span> с классом <span class="code">code</span>. Например: </p>	
+		
+			<p class=code>
+				&lt;div class=code&gt;<br>
+				&nbsp; &nbsp;это блок кода <br>
+				&lt;/div&gt;
+			</p>
+		
+		<p>Данный тег позволяет сместить весь блок c кодом относительно документа, на <span class="code">2em</span> вправо и на <span class="code">1.5em</span> вниз и вверх.</p>
+	</section>
+	
+<hr>	
+	<section>
+	<h3 id=annotation>Аннотации</h3>
+
+		<p>Для аннотаций используется тег <span class="code">&lt;div&gt;</span> с классом <span class="code">annotation</span>, например:</p>
+		
+			<p class=code>
+				&lt;div  class=annotation&gt;<span class="annotation">@Override</span>&lt;/div&gt;
+			</p>
+			
+		<p>В результате, данный элемент программы (<span class="annotation code">@Override</span>) в документе будет выделен серым цветом.</p>
+	</section>	
+
+<hr>		
+	<section>
+	<h3 id=keywords>Ключевые слова в программе</h3>
+	
+				
+		<p>Ключевые слова в программе (в <span class="code"><a href="#blockOfCode">блоке кода</a></span>) размечаются используя тег <span class="code">&lt;span&gt;</span> с классом <span class="code">keyword</span>, например:</p>
+		
+			<p class=code>
+				&lt;span  class=keyword&gt;<span class="keyword">public void</span>&lt;/span&gt;
+			</p>
+			
+		<p>В результате, отмеченное  соответсвующим тегом, ключевое слово в документе будет выделено  <span class="keyword code">светло-синим цветом</span>.</p>
+	</section>
+	
+<hr>
+ <section>
+	<h3 id="classmarkup">Разметка класса в блоке кода</h3>
+	
+	<p>
+		Когда мы описываем класс в <span class="code"><a href="#blockOfCode">блоке кода</a></span>, - данный элемент HTML страницы будет контейнером <span class="code">&lt;div&gt;</span>. Внутри этого контейнера будет размечено соответсвующей разметкой тело класса.</p> 
+		
+		<section>
+			<h4 id=className>Имя класса</h4>		
+			
+			<p>Для имени класса в таблице стилей никаких правил нет. Поэтому в этом разделе будут рекомендации, а не требования, которых необходимо придерживаться. Эти рекомендации позволяют облегчить верстку и позволяют лучше ориентироваться в коде HTML документа.</p>
+			
+			<p>Как говорилось ранее, класс в блоке кода это контейнер <span class="code">&lt;div&gt;</span>, и я рекомендую размечать имя класса сразу же после открытия этого тега, используя при этом, если необходимо, тег  <span class="code">&lt;span  class=keyword&gt;<span class="keyword">public class</span>&lt;/span&gt;</span>, чтобы разметить ключевые слова в программе.</p>
+			
+			<p>Я рекомендую открывыющую фигурную скобку у класса  оставлять на той же строке, в которой вы размечали имя класса, а закрывающую фигурную скобку ставить непосредственно перез закрытием контейнера  <span class="code">&lt;div&gt;</span> для блока с классом.</p>
+			
+			<p>На примере это будет понятнее</p>
+			
+			<p class="code">
+				&lt;div&gt;&lt;span class=keyword&gt;<span class=keyword>public class</span>&lt;/span&gt; MyClassName { <br>
+				} <br>
+				&lt;/div&gt;
+			</p>
+			
+		</section>
+		
+		<br>
+		<section>
+		<h4 id=classBody>Тело класса</h4>
+		
+		<p>Тело класса, это так же, отдельный, <span class="code">&lt;div&gt;</span> контейнер, в котором используется класс <span class="code">classbody</span>. Этот контейнер начинается после открывающей фигурной скобкой класса и заканчивается перед закрывающей фигурной скобкой.</p> 
+		
+		<p>Данный контейнер позволяет сместить содержимое тела класса вправо на <span class="code">2em</span>, а также смещает содержимое тела класса вниз на <span class="code">1em</span>, таким образом производится смещение в тексте прораммы для описания классов.</p>
+		
+		<p>Пример:</p>		
+		<p class=code>		
+				&lt;div&gt;&lt;span class=keyword&gt;<span class=keyword>public class</span>&lt;/span&gt; MyClassName { <br>
+				
+				&nbsp; &nbsp; &lt;div class=classbody&gt;<br>
+				&nbsp; &nbsp; &nbsp; Тело класса<br>
+				&nbsp; &nbsp; &lt;/div&gt;<br>
+				} <br>
+				&lt;/div&gt;
+				
+		</p>		
+		</section>	
+ </section>
+
+ <hr>
+<section>
+	<h3 id=methodMarkup>Разметка метода в блоке кода</h3>
+	
+	<p>
+		Когда мы описываем метод в <span class="code"><a href="#blockOfCode">блоке кода</a></span>, - данный элемент HTML страницы будет контейнером <span class="code">&lt;div&gt;</span>. Внутри этого контейнера будет размечено соответсвующей разметкой тело метода.</p> 
+		
+		<section>
+			<h4 id="methodName">Имя метода</h4>		
+			
+			<p>Для имени метода  в таблице стилей никаких правил нет. Поэтому в этом разделе будут рекомендации, а не требования, которых необходимо придерживаться. Эти рекомендации позволяют облегчить верстку и позволяют лучше ориентироваться в коде HTML документа.</p>
+			
+			<p>Как говорилось выше, метод в блоке кода это контейнер <span class="code">&lt;div&gt;</span>, и я рекомендую размечать имя метода сразу же после открытия этого тега, используя при этом, если необходимо, тег  <span class="code">&lt;span  class=keyword&gt;<span class="keyword">public void</span>&lt;/span&gt;</span>, чтобы разметить ключевые слова в программе.</p>
+			
+			<p>Я рекомендую открывыющую фигурную скобку у метода оставлять на той же строке, в которой вы размечали имя метода, а закрывающую фигурную скобку ставить непосредственно перез закрытием контейнера  <span class="code">&lt;div&gt;</span> для блока с методом.</p>
+			
+			<p>На примере это будет понятнее</p>
+			
+			<p class="code">
+				&lt;div&gt;&lt;span class=keyword&gt;<span class=keyword>public void</span>&lt;/span&gt; MyMethod() { <br>
+				} <br>
+				&lt;/div&gt;
+			</p>
+			
+		</section>
+		
+		<br>
+		<section>
+		<h4 id="methodBody">Тело метода</h4>
+		
+		<p>Тело метода, это так же, отдельный, <span class="code">&lt;div&gt;</span> контейнер, в котором используется класс <span class="code">methodbody</span>. Этот контейнер начинается после открывающей фигурной скобкой метода и заканчивается перед закрывающей фигурной скобкой.</p> 
+		
+		<p>Данный контейнер позволяет сместить содержимое тела метода вправо на <span class="code">2em</span>, а также смещает содержимое тела метода вниз на <span class="code">0.5em</span>, таким образом производится смещение в тексте прораммы для описания методов.</p>
+		
+		<p>Пример:</p>		
+		<p class=code>		
+				&lt;div&gt;&lt;span class=keyword&gt;<span class=keyword>public void</span>&lt;/span&gt; MyMethod() { <br>
+				
+				&nbsp; &nbsp; &lt;div class=methodbody&gt;<br>
+				&nbsp; &nbsp; &nbsp; Тело метода<br>
+				&nbsp; &nbsp; &lt;/div&gt;<br>
+				} <br>
+				&lt;/div&gt;				
+		</p>		
+		</section>	
+ </section>
+ 
+ <hr>
+ <section>
+	<h3 id=finalvars>final переменные (константы) </h3>
+
+	<p><span class="code keyword">final</span> переменные в коде программы (константы) можно выделить с помощью тега
+	<span class="code">&lt;span&gt;</span> с классом <span class="code">finalvar</span>. Например:</p>
+ 
+	<p class=code>
+	&lt;span class=finalvar&gt;<span class="finalvar">DEFAULT_LOCATION_POINT</span>&lt;/span&gt;
+ 	 </p>
+	 
+	 <p>Данный тег позволяет выделить такую переменную в блоке кода в HTML-документе полужирным</p>
+ </section>
+ 
+ <hr>
+ <section>
+	<h3 id=staticMethods>Статические методы</h3>
+	
+	<p>Статические переменные в коде программы можно выделить с помощью тега
+	<span class="code">&lt;span&gt;</span> с классом <span class="code">staticmethod</span>. Например:</p>
+ 
+	<p class=code>
+	&lt;span class=staticmethod&gt;<span class="staticmethod">assertEquals</span>&lt;/span&gt;()
+ 	 </p>
+	 
+	 <p>Данный тег позволяет выделить такую переменную в блоке кода в HTML-документе курсивом</p>
+ </section>
+ 
+ <hr>
+ <section>
+	<h3 id=strings>Стоки</h3>
+	
+	<p>
+		Строки в коде программы  выделяются с помощью тега <span class="code">&lt;span&gt;</span> с классом <span class="code">string</span>. Например
+	</p>
+
+	<p class="code">	
+		System.out.println(&lt;span class=string&gt;<span class="string">"Hello World!"</span>&lt;/span&gt;)
+	</p>
+	
+	<p>Указанная разметка позволяет выделить <span class="string">строки</span> в блоке кода <span class="string">коричневым цветом.</span></p>
+	
+	<br>
+	<section>
+		<h4 id=stringsNewLine>Перенос на новую строку</h4>
+		
+		<p>Бывают ситуации в программах, когда в одну строку на экране все не умещается и нужно выполнить перенос строк,
+		и при этом, для новой, перенесенной строки, устанавлиаются отступы. Такое встречается в программах чаще всего, когда используются длинные строки, и к ним конкатинируются значения переменных, и т.п. Поэтому я разместил информацию о правилах верстки и использования моей таблицы стилей в разделе описывающем строки.</p>
+		
+		<p>При возникновении подобной ситуации, и когда необходимо сдвинуть новую перенесенную строку вправо, используется HTML-элемент с классом <span class="code">stringnewline</span>. HTML-элемет может быть любым. Но я рекомендую заключать новую перенесенную строку в тег <span class="code">&lt;div&gt;</span>, применяя у него класс <span class="code">stringnewline</span>, потому что  тег <span class="code">&lt;div&gt;</span> блочного типа, и используя его нет необходимости применять тег <span class="code">&lt;br&gt;</span>.</p>
+		
+		<p>Пример:</p>
+		
+		<div class="code">
+			System.out.println(&lt;span class=string&gt;<span class="string">"Hello, my name is "</span>&lt;/span&gt; + 
+			<div class=stringnewline>&lt;div class=stringnewline&gt;myname);&lt;/div&gt;</div>
+		</div>
+		
+		Использование HTML элемента с классом <span class="code">stringnewline</span> сдвигает выделенную строку вправо на <span class="code">5em</span>.
+		
+	</section>
+	
+ </section>
+ 
+ <hr>
+ <section>
+	<h3 id=comments>Комментарии</h3>
+	
+	<p>Для того, чтобы выделить текст программы в <span class="code"><a href="#blockOfCode">блоке кода</a></span> как комментарий, необходимо использовать элемент HTML с классом <span class="code">comment</span>.</p> 
+	
+	<p>При этом выделенный текст будет отображаться, как комментарий, зеленым цветом. Применяя класс <span class="code">comment</span> можно использовать любой тег. Но рекомендуется использовать, в зависимости от вида комментария теги <span class="code">&lt;span&gt;</span> для комментариев вида <span class="code comment">//</span> и <span class="code">&lt;div&gt;</span> для комментариев вида <span class="code comment">/* */</span></p>
+	
+	<p>Примеры:</p>
+	
+	<div class="code">		
+			<div>
+				Linen linen = spy(<span class="keyword">new</span> Linen());&nbsp; &lt;span class="comment"&gt;<span class="comment">//  Требуется библиотека org.mockito.Mockito.*</span>&lt;/span&gt;
+			</div>
+			
+			<br>
+			<div>
+				<div>	
+				&lt;div class=comment&gt;<span class=comment>/**</span>&lt;br&gt;<br>
+					<span class=comment>* @param weight</span>&lt;br&gt;<br>
+					<span class=comment>* the weight to set</span>&lt;br&gt;<br>
+					<span class=comment>*/</span><br>
+				&lt;/div&gt;
+				</div>
+				<span class="keyword">public void</span> setWeight(<span class="keyword">int</span> weight) {<br>
+				<span class="stringnewline">...</span><br>
+				}
+			</div>
+			
+	</div>
+	
+ </section>
+ 
+  <hr>
+ <section>
+	<h3 id=forBody>Тело цикла</h3>
+	
+	<p>Для того чтобы выполнить отступы вправо для кода в цикле (<span class="code">for</span>, <span class="code">while</span>) необходимо код тела цикла поместить в тег-контейнер <span class="code">&lt;div&gt;</span> с классом <span class="code">loopbody</span>.</p>
+	
+	<p>Тело цикла начинается сразу после открывающейся фигурной скобки цикла (или воображаемой скобки, если её нет в тексте программы) и заканчивается непосредственно перед закрывающейся фигурной скобкой цикла (или вооброжаемой скобкой, если её нет в программе).</p>
+	
+	<p>Например:</p>
+	
+	<p class=code>
+		<span class="keyword">for</span> (AbstractLayer layer : linen.getLayers()) {<br>
+			&lt;div class="loopbody"&gt;<br>
+			<span class="stringnewline">Тело цикла </span><br>
+			<span class="stringnewline">...</span><br>
+			&lt;/div&gt;<br>
+			}
+	</p>
+				
+	<p>При использовании элемента HTML <span class="code">&lt;div&gt;</span> с классом <span class="code">loopbody</span> выделенный блок сдвигается вправо на <span class="code">2em</span>, а также опускается на <span class="code">0.5em</span>.</p>			
+		
+ </section>
+ 
+  <hr>
+ <section>
+	<h3 id=ifBody>Тело if</h3>
+	
+	<p>Для того чтобы выполнить отступы вправо для кода в условном операторе <span class="code">if</span> необходимо код в блоках <span class="code">if</span> (или <span class="code">else</span>) поместить в тег-контейнер <span class="code">&lt;div&gt;</span> с классом <span class="code">ifbody</span>.</p>
+	
+	<p>Тело условного опрератора <span class="code">if</span> (или <span class="code">else</span>) начинается сразу после открывающейся фигурной скобки (или воображаемой, если её нет в тексте программы) и заканчивается непосредственно перед закрывающейся фигурной скобкой (или вооброжаемой скобкой, если в программе нет её ).</p>
+	
+	<p>Например:</p>
+	
+	<div class=code>
+		<span class="keyword">if</span> (a > b)<br>
+			&lt;div class="ifbody"&gt;<br>
+			<div class="ifbody">
+				System.out.println(<span class="string">"a > b"</span>);
+			</div>			
+			&lt;/div&gt;<br>			
+			
+			<span class="keyword">else</span><br>
+			&lt;div class="ifbody"&gt;<br>
+			<div class="ifbody">			
+				System.out.println(<span class="string">"b > a "</span>);
+			</div>
+			&lt;/div&gt;			
+	</div>
+				
+	<p>При использовании элемента HTML <span class="code">&lt;div&gt;</span> с классом <span class="code">ifbody</span> выделенный блок сдвигается вправо на <span class="code">2em</span>, а также опускается на <span class="code">0.5em</span>.</p>			
+		
+ </section>
+
+
+ <hr>
+ <section>
+	<h3 id=tryCatch>Тело try-catch-finally</h3>
+	
+	<p>Для того чтобы выполнить отступы вправо для кода в блоках кода <span class="code">try</span>, <span class="code">catch</span> или <span class="code">finally</span> необходимо код в этих блоках поместить в тег-контейнер <span class="code">&lt;div&gt;</span> с классом <span class="code">trycatchbody</span>.</p>
+	
+	<p>Тело блока кода <span class="code">try</span>, <span class="code">catch</span> или <span class="code">finally</span> начинается сразу после открывающейся фигурной скобки (или воображаемой, если её нет в тексте программы) и заканчивается непосредственно перед закрывающейся фигурной скобкой (или вооброжаемой скобкой, если в программе нет её ).</p>
+	
+	<p>Например:</p>
+	
+	<div class=code>
+		<span class="keyword">try</span> {<br>
+			&lt;div class="trycatchbody"&gt;<br>
+			<div class="trycatchbody">
+				Thread.speep(500);
+			</div>
+			&lt;/div&gt;<br>			
+			
+			} <span class="keyword">catch</span> (InterruptedException ex) {<br>
+			&lt;div class="trycatchbody"&gt;<br>
+			<div class="trycatchbody">			
+				ex.printStackTrace();
+			</div>
+			&lt;/div&gt; <br>
+			}
+	</div>
+				
+	<p>При использовании элемента HTML <span class="code">&lt;div&gt;</span> с классом <span class="code">trycatchbody</span> выделенный блок сдвигается вправо на <span class="code">2em</span>, а также опускается на <span class="code">0.5em</span>.</p>			
+		
+ </section> 
+
+ 
+</main>		
+</body>
+</html>

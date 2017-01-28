@@ -4,3 +4,9 @@ body {
 	margin: 5;
 }
 
+h1, h2, h3, h4 {color: #000080;}
+
+li {
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}

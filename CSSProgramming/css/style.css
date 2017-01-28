@@ -32,14 +32,39 @@ div.classbody  div.annotation {
 	margin-top: 1.2em;	
 }
 
-div.comment {
-	margin-top: 1.2em;	
-}
-
 .code {
 	font-family: Consolas, Monospace;	
 	font-size: 13pt;
 	color: #000080;
+}
+
+div.comment {
+	margin-top: 1.2em;	
+}
+
+div.classbody {
+	margin-left:2em;
+	margin-top:1em;
+}
+
+div.methodbody {
+	margin-left:2em;
+	margin-top:0.5em;
+}
+
+div.loopbody {
+	margin-left:2em;
+	margin-top:0.5em;
+}
+
+div.ifbody {
+	margin-left:2em;
+	margin-top:0.5em;
+}
+
+div.trycatchbody {
+	margin-left:2em;
+	margin-top:0.5em;
 }
 
 .annotation {
@@ -57,26 +82,6 @@ div.comment {
 .stringnewline {
 	margin-left:5em;
 }
-
-.classbody {
-	margin-left:2em;
-	margin-top:1em;
-}
-
-.methodbody {
-	margin-left:2em;
-	margin-top:0.5em;
-}
-
-.forbody {
-	margin-left:2em;
-	margin-top:0.5em;
-}
-
-.ifbody {
-	margin-left:2em;
-	margin-top:0.5em;
-}
  
 .finalvar {
 	font-weight: bold;
@@ -91,5 +96,14 @@ div.comment {
 }
 
 li {
-	margin-bottom: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}
+
+A:visited .code{
+	color: #800080; /* Цвет посещенных ссылок */
+}
+		
+A:link .code{
+	color: #0000ff; /* Цвет посещенных ссылок */
 }
